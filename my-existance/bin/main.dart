@@ -14,10 +14,15 @@ void main() async {
   final hari = Human("Hari", specialization: "Amazing Guy");
   final aradhya = Aradhya();
   final dog = Dog("Tommy");
+  dog.kill(aradhya);
   dog.bark();
   aradhya.kill(hari);
   List<LivingThings> livingThings = [aradhya, hari, dog];
   final ecoSystem = Ecosystem.start([aradhya, hari]);
+
+  Future.delayed(Duration(seconds: 10),(){
+    print("Is Aradhya alive without oxygen for lots of duration ${aradhya.isAlive}");
+  });
 }
 
 void mainA(List<String> arguments) async {

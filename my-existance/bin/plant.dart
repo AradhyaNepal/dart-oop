@@ -11,6 +11,7 @@ class Plant extends LivingThings<CarbonDioxide, Oxygen> {
 
   @override
   Oxygen breathe(CarbonDioxide carbonDioxide) {
+    setOutOfBreath();
     print("$name is breathing");
     return Oxygen();
   }

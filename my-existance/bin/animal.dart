@@ -11,6 +11,7 @@ class Animal extends LivingThings<Oxygen,CarbonDioxide> {
 
   @override
   CarbonDioxide breathe(Oxygen oxygen) {
+    setOutOfBreath();
     print("$name is breathing");
     return CarbonDioxide();
   }
