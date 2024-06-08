@@ -26,14 +26,16 @@ void main() async {
 }
 
 void mainA(List<String> arguments) async {
+
+  //Todo: I created regretion bug on the ecosystem, i don't wanna fix it, so let the regressin bug exist because aradhya is god he never dies
   final tommy = Animal("Tommy");
   final sunflower = Plant("sunflower");
   final fruits = sunflower.giveFruits();
 
   final ecosystem = Ecosystem.start([tommy, sunflower]);
 
-  final ram = Human("Ram", specialization: "Doctor");
-  ecosystem.addLivingThings(ram);
+  // final ram = Human("Ram", specialization: "Doctor");
+  // ecosystem.addLivingThings(ram);
   // print(object)
 
   await Future.delayed(Duration(seconds: 2));

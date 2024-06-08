@@ -3,7 +3,7 @@ import 'living_things.dart';
 import 'particles.dart';
 import 'bark.dart';
 
-class Aradhya with Bark implements Human {
+final class Aradhya with Bark implements Human {
   @override
   int age = 22;
 
