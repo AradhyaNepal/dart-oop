@@ -1,7 +1,8 @@
 import 'animal.dart';
 import 'living_things.dart';
+import 'bark.dart';
 
-class Dog extends Animal {
+class Dog extends Animal with Bark {
   Dog(super.name);
 
   void protectHomeFrom(LivingThings livingThings) {
@@ -11,9 +12,5 @@ class Dog extends Animal {
 
   void getBallAndReturnToMaster() {
     print("Going for the ball");
-  }
-
-  void bark() {
-    print("Vow! Vow!");
   }
 }

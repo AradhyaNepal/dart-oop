@@ -1,7 +1,8 @@
 import 'human.dart';
 import 'living_things.dart';
 import 'particles.dart';
-class Aradhya implements Human{
+import 'bark.dart';
+class Aradhya  with Bark implements Human{
   @override
   int age=22;
 
@@ -21,6 +22,7 @@ class Aradhya implements Human{
 
   @override
   void kill(LivingThings<Particles, Particles> another) {
+    bark();
     another.kill(another);
   }
 

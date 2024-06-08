@@ -8,12 +8,15 @@ import 'ecosystem.dart';
 import 'human.dart';
 import 'dog.dart';
 import 'aradhya.dart';
+import 'bark.dart';
 
 void main() async {
   final hari = Human("Hari", specialization: "Amazing Guy");
   final aradhya = Aradhya();
+  final dog = Dog("Tommy");
+  dog.bark();
   aradhya.kill(hari);
-  List<LivingThings> livingThings = [aradhya, hari];
+  List<LivingThings> livingThings = [aradhya, hari, dog];
   final ecoSystem = Ecosystem.start([aradhya, hari]);
 }
 
