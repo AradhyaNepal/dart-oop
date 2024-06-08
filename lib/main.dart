@@ -2,20 +2,24 @@ import 'aradhya.dart';
 import 'human.dart';
 
 void main() async {
-
+  final normalAnimal = Human();
+  final a2 = Aradhya();
   while (true) {
-    final ram = Human();
-    print("Is me Ram");
-    ram.whereIAm();
-    ram.walk();
-    ram.whereIAm();
+    print("Is me Normal Human");
+    normalAnimal.whereIAm();
+    normalAnimal.walk();
+    normalAnimal.whereIAm();
+    print("-----------------------------");
 
     print("Is me A2, the second personality of Aaradhya");
-    final a2 = Aradhya();
+
     a2.whereIAm();
     a2.walk();
     a2.whereIAm();
-    await Future.delayed(Duration(milliseconds: 1500));
+    a2.bark();
+    print("-----------------------------");
+    await Future.delayed(Duration(milliseconds: 5000));
   }
+  a2.dispose();
 }
 //Abstract class, Interface and Mixin

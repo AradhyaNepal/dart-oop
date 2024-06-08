@@ -1,12 +1,19 @@
 import 'dart:async';
 import 'dart:math';
 
-import 'animal.dart';
+import 'bark.dart';
+import 'human.dart';
 
-class Aradhya implements Animal {
-  late Timer _timer = Timer.periodic(Duration(seconds: 1), (_) {
-    _iAmOnMood = Random().nextInt(5) == 2;
-  });
+class Aradhya with Bark implements Human {
+  late Timer _timer;
+
+  Aradhya() {
+    _timer = Timer.periodic(Duration(seconds: 1), (_) {
+      print("Timer was running");
+      _iAmOnMood = Random().nextInt(2) == 1;
+      print("My mood changed to $_iAmOnMood");
+    });
+  }
 
   bool _iAmOnMood = false;
   int _currentPosition = -50;
