@@ -14,4 +14,13 @@ class Plant extends LivingThings<CarbonDioxide, Oxygen> {
     print("$name is breathing");
     return Oxygen();
   }
+
+  @override
+  void kill(LivingThings<Particles, Particles> another) {
+    print("I am just a plant i cannot kill living things");
+  }
+
+  Fruits giveFruits(){
+    return Fruits();
+  }
 }

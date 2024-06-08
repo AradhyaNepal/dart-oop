@@ -4,29 +4,14 @@ import 'living_things.dart';
 import 'animal.dart';
 import 'plant.dart';
 import 'particles.dart';
+import 'ecosystem.dart';
 
 void main(List<String> arguments) async {
   final tommy = Animal("Tommy");
   final sunflower = Plant("sunflower");
+  final fruits = sunflower.giveFruits();
 
-  Oxygen oxygen = Oxygen();
-  CarbonDioxide carbonDioxide = CarbonDioxide();
-  Future.delayed(Duration(seconds: 5), () {
-    sunflower.kill(tommy);
-  });
-  while (true) {
-    if (!sunflower.isAlive && !tommy.isAlive) {
-      break;
-    }
-    if (sunflower.isAlive) {
-      oxygen = sunflower.breathe(carbonDioxide);
-    }
-    if (tommy.isAlive) {
-      carbonDioxide = tommy.breathe(oxygen);
-    }
+  final ecosystem = Ecosystem([tommy, sunflower]);
 
-    print(
-        "Oxygen ${oxygen.hashCode} and carbondioxide ${carbonDioxide.hashCode} cycle is running");
-    await Future.delayed(Duration(seconds: 2));
-  }
+  await Future.delayed(Duration(seconds: 2));
 }
