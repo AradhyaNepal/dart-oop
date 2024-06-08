@@ -1,8 +1,7 @@
 import 'living_things.dart';
-import 'carbon_dioxide.dart';
-import 'oxygen.dart';
+import 'particles.dart';
 
-class Plant extends LivingThings {
+class Plant extends LivingThings<CarbonDioxide, Oxygen> {
   Plant(super.name);
 
   @override
@@ -11,7 +10,8 @@ class Plant extends LivingThings {
   }
 
   @override
-  Oxygen breathe(CarbonDioxide oxygen) {
-    // TODO: implement breathe
+  Oxygen breathe(CarbonDioxide carbonDioxide) {
+    print("$name is breathing");
+    return Oxygen();
   }
 }

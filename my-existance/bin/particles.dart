@@ -1,2 +1,5 @@
-class Oxygen{}
-class CarbonDioxide{}
+abstract class Particles {}
+
+class Oxygen extends Particles {}
+
+class CarbonDioxide extends Particles {}
