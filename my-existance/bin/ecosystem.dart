@@ -12,15 +12,15 @@ class Ecosystem {
   final List<Oxygen> _oxygenPool = [Oxygen()];
   final List<CarbonDioxide> _carbonDioxidePool = [CarbonDioxide()];
 
-  void addAnimal(Animal animal) {
-    _animals.add(animal);
+  void addLivingThings(LivingThings livingThings) {
+    if (livingThings is Animal) {
+      _animals.add(livingThings);
+    } else if (livingThings is Plant) {
+      _plants.add(livingThings);
+    }
   }
 
-  void addPlants(Plant animal) {
-    _plants.add(animal);
-  }
-
-  factory Ecosystem(List<LivingThings> livingThings) {
+  factory Ecosystem.start(List<LivingThings> livingThings) {
     final animals = livingThings.whereType<Animal>().toList();
     final plants = livingThings.whereType<Plant>().toList();
     return Ecosystem._(animals: animals, plants: plants);
@@ -37,12 +37,12 @@ class Ecosystem {
         if (_oxygenPool.isEmpty || _carbonDioxidePool.isEmpty) {
           print(
               "Ecosystem is broken due to no resources. All existence came to an extinction");
-          _ecoTime.cancel();
+          dispose();
           return;
         } else if (_animals.isEmpty && _plants.isEmpty) {
           print(
               "Ecosystem is broken due to no living things. All the resources is no more useful");
-          _ecoTime.cancel();
+          dispose();
           return;
         }
         print("Ecosystem is well maintained");
