@@ -7,14 +7,14 @@ import 'particles.dart';
 import 'ecosystem.dart';
 import 'human.dart';
 import 'dog.dart';
+import 'aradhya.dart';
 
 void main() async {
-  final dog = Dog("Tommy");
-  dog.getBallAndReturnToMaster();
-  final ravan = Human("Raven", specialization: "Bad");
-  dog.bark();
-  dog.bark();
-  dog.protectHomeFrom(ravan);
+  final hari = Human("Hari", specialization: "Amazing Guy");
+  final aradhya = Aradhya();
+  aradhya.kill(hari);
+  List<LivingThings> livingThings = [aradhya, hari];
+  final ecoSystem = Ecosystem.start([aradhya, hari]);
 }
 
 void mainA(List<String> arguments) async {
